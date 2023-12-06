@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class PlayerContoller : MonoBehaviour
@@ -8,10 +10,14 @@ public class PlayerContoller : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
     private BoxCollider2D coll;
+  
+
+
 
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
     private float dirX = 0f;
+    public bool Direct = true;
 
     [SerializeField] private LayerMask jumpableGround;
 
@@ -27,12 +33,14 @@ public class PlayerContoller : MonoBehaviour
     
     void Update()
     {
+       
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         if (Input.GetKeyDown("space") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
+       
         UpdateAnimationState();
     }
     private void UpdateAnimationState()
@@ -42,11 +50,13 @@ public class PlayerContoller : MonoBehaviour
         {
             state = MovementState.running;
             sprite.flipX = false;
+            Direct = true;
         }
         else if (dirX < 0f)
         {
             state = MovementState.running;
             sprite.flipX = true;
+            Direct = false;
         }
         else
         {
