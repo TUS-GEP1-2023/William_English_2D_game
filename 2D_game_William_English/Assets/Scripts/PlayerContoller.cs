@@ -10,7 +10,9 @@ public class PlayerContoller : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
     private BoxCollider2D coll;
-  
+    [SerializeField] private AudioSource jumpSoundEffect;
+    
+
 
 
 
@@ -38,6 +40,7 @@ public class PlayerContoller : MonoBehaviour
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         if (Input.GetKeyDown("space") && IsGrounded())
         {
+            jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
        

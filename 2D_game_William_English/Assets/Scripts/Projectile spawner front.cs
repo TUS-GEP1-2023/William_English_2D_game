@@ -8,6 +8,7 @@ public class Projectilespawnerfront : MonoBehaviour
     public Projectile projectilePrefab;
     public Transform backLaunchOffset;
     public Transform frontLaunchOffset;
+    [SerializeField] private AudioSource missileSoundEffect;
     private void Start()
     {
         
@@ -20,6 +21,7 @@ public class Projectilespawnerfront : MonoBehaviour
             
             if (Player.Direct == true)
             {
+                missileSoundEffect.Play();
                 Instantiate(projectilePrefab, frontLaunchOffset.position, transform.rotation);
             }
            

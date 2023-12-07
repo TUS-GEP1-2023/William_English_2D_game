@@ -8,6 +8,7 @@ public class BackSpawner : MonoBehaviour
     public Projectile projectilePrefab;
     public Transform backLaunchOffset;
     public Transform frontLaunchOffset;
+    [SerializeField] private AudioSource missileSoundEffect;
     private void Start()
     {
 
@@ -19,7 +20,7 @@ public class BackSpawner : MonoBehaviour
         {
              if (Player.Direct == false)
             {
-
+                missileSoundEffect.Play();
                 Instantiate(projectilePrefab, backLaunchOffset.position, transform.rotation);
             }
         }
