@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9003189420869471907}
   - component: {fileID: 4485998727417940934}
   - component: {fileID: 5805825876600270008}
+  - component: {fileID: 6303511226993405044}
   m_Layer: 0
   m_Name: Tiki man 1
   m_TagString: Enemies
@@ -206,3 +207,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2489014, y: 0.2500173}
   m_EdgeRadius: 0
+--- !u!95 &6303511226993405044
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8428036960736797099}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 728a1bc0aaeb472498bf2ca4c0a8c050, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
